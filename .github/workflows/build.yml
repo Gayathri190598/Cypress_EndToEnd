@@ -1,5 +1,5 @@
-
 name: Regression End-to-end tests
+
 on: push
 jobs:
   cypress-run:

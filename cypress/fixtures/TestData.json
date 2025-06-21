@@ -1,0 +1,13 @@
+{
+    "login":{
+        "email" : "lavendier123@gmail.com",
+        "password" : "Lavendier@123"
+    },
+    "product":{
+        "searchInput" : "MacBook"
+    },
+    "message":{
+        "text" : "Success: You have added "
+    }
+
+}
