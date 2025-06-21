@@ -5,7 +5,7 @@ export class HomePage
         clickSearch : "#search > span > button",
         product : "img.img-responsive[title='MacBook']",
         addToCart : "button#button-cart",
-        successMessage : "#product-product > div.alert.alert-success.alert-dismissible1"
+        successMessage : "#product-product > div.alert.alert-success.alert-dismissible"
     } 
 
     enterSearchInput(productName)
