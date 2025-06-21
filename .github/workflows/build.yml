@@ -1,4 +1,4 @@
-//End-to-End Testing
+
 name: Regression End-to-end tests
 on: push
 jobs:
