@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test:addtocart": "npx cypress run --spec cypress/e2e/tests/HomePageTest.cy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,9 +15,13 @@
   "bugs": {
     "url": "https://github.com/Gayathri190598/Cypress_EndToEnd/issues"
   },
+  "engines": {
+  "node": "22.x"
+},
   "homepage": "https://github.com/Gayathri190598/Cypress_EndToEnd#readme",
   "description": "",
   "devDependencies": {
-    "cypress": "^14.5.0"
+    "cypress": "^14.5.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
