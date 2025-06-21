@@ -15,6 +15,7 @@ jobs:
          command: npm run test:addtocart
 
       - name: Cypress Test Report
+        if: always()  #to generate report both in pass and fail
         uses: actions/upload-artifact@v4
         with:
          name: Mochawesome HTML Report - addtocart
@@ -33,6 +34,7 @@ jobs:
          command: npm run test:registrationflow
 
       - name: Cypress Test Report
+        if: always()  #to generate report both in pass and fail
         uses: actions/upload-artifact@v4
         with:
          name: Mochawesome HTML Report - registerflow
