@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:addtocart": "npx cypress run --spec cypress/e2e/tests/HomePageTest.cy.js",
     "test:registrationflow": "npx cypress run --spec cypress/e2e/tests/RegisterTest.cy.js",
+    "test:addtocart": "npx cypress run --spec cypress/e2e/tests/HomePageTest.cy.js",
     "test:all": "npx cypress run --spec \"cypress/e2e/tests/HomePageTest.cy.js,cypress/e2e/tests/RegisterTest.cy.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "echo Skipping Cypress verification"
