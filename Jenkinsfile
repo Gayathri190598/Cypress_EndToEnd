@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'node16' // Match the name in Global Tools
+        nodejs 'node22' // Match the name in Global Tools
     }
 
     environment {
