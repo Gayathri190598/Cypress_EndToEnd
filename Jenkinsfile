@@ -25,7 +25,7 @@ pipeline {
 
         stage('Run Cypress Tests') {
             steps {
-                bat 'npx cypress run --browser electron --headless'
+                bat 'npx cypress run --browser chrome --headless'
             }
         }
     }
