@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'node22' // Match the name in Global Tools
+        nodejs 'node22' // Match this with your configured Node.js in Jenkins
     }
 
     environment {
@@ -10,9 +10,10 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Gayathri190598/Cypress_EndToEnd.git'
+                git branch: 'main', url: 'https://github.com/Gayathri190598/Cypress_EndToEnd.git'
             }
         }
 
@@ -31,8 +32,17 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'cypress/videos/**/*.*', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'cypress/screenshots/**/*.*', allowEmptyArchive: true
+            echo 'Post actions: archiving artifacts...'
+            archiveArtifacts artifacts: 'cypress/videos/**/*.mp4', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'cypress/screenshots/**/*.png', allowEmptyArchive: true
+        }
+
+        failure {
+            echo 'Build failed. Check Cypress logs and screenshots.'
+        }
+
+        success {
+            echo 'Build passed successfully!'
         }
     }
 }
