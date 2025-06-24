@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'node22' // Match this with your configured Node.js in Jenkins
+        nodejs 'node22'
     }
 
     environment {
-        CYPRESS_CACHE_FOLDER = '.cache/Cypress'
+        CYPRESS_INSTALL_BINARY = "C:\\Users\\HP\\AppData\\Local\\Cypress\\Cache\\14.5.0"
+        HOME = "${env.WORKSPACE}"
     }
 
     stages {
-
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/Gayathri190598/Cypress_EndToEnd.git'
@@ -33,16 +33,8 @@ pipeline {
     post {
         always {
             echo 'Post actions: archiving artifacts...'
-            archiveArtifacts artifacts: 'cypress/videos/**/*.mp4', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'cypress/screenshots/**/*.png', allowEmptyArchive: true
-        }
-
-        failure {
+            archiveArtifacts artifacts: '**/cypress/screenshots/**, **/cypress/videos/**', allowEmptyArchive: true
             echo 'Build failed. Check Cypress logs and screenshots.'
-        }
-
-        success {
-            echo 'Build passed successfully!'
         }
     }
 }
